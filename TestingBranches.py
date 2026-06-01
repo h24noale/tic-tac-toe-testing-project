@@ -1,1 +1,0 @@
-# This file is simply for testing branches and pull requests. It has no real purpose in the project.
