@@ -48,6 +48,12 @@ class CLI_Wrapper:
                 print(f"{winner} wins!")
                 break
 
+            if self.board.check_draw():
+
+                self.display_board()
+                print("It's a draw!")
+                break
+
             # AI:s tur
             self.game_engine.play_turn()
 
