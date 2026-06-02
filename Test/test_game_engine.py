@@ -56,3 +56,18 @@ def test_game_engine_play_turn_returns_false_on_full_board():
 
     assert result is False
     board_mock.place_mark.assert_not_called()
+
+
+def test_game_engine_make_ai_move_returns_false_when_full_board():
+
+    board_mock = Mock()
+    ai_player_mock = Mock()
+
+    ai_player_mock.make_move.return_value = None
+
+    game_engine = GameEngine(board_mock, ai_player_mock)
+
+    result = game_engine.make_ai_move()
+
+    assert result is False
+    board_mock.place_mark.assert_not_called()

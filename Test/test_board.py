@@ -42,3 +42,11 @@ class TestBoard(unittest.TestCase):
             ["O", "X", "X"]
         ]
         self.assertTrue(self.board.check_draw())
+
+    def test_check_draw_false_when_spaces_remaining(self):
+        self.board.grid = [
+            ["X", "O", " "],
+            ["X", "O", "O"],
+            ["O", "X", "X"]
+        ]
+        self.assertFalse(self.board.check_draw())

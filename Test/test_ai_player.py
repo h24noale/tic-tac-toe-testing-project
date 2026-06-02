@@ -45,4 +45,18 @@ def test_ai_returns_coordinates_inside_board():
 
     assert 0 <= row <= 2
     assert 0 <= col <= 2
+
+
+def test_ai_returns_only_available_position_when_one_free_cell():
+
+    board = Board()
+    ai = AIPlayer()
+
+    board.grid = [
+        ["X", "O", "X"],
+        ["X", "O", "O"],
+        ["O", "X", " "]
+    ]
+
+    assert ai.make_move(board) == (2, 2)
    
