@@ -7,9 +7,14 @@ class GameEngine:
 
     def play_turn(self):
 
-        row, col = self.ai_player.make_move(self.board)
+        move = self.ai_player.make_move(self.board)
 
+        if move is None:
+            return False
+
+        row, col = move
         self.board.place_mark(row, col, "O")
+        return True
     
     def make_ai_move(self):
 
@@ -18,3 +23,6 @@ class GameEngine:
         if move is not None:
             row, col = move
             self.board.place_mark(row, col, "O")
+            return True
+
+        return False
