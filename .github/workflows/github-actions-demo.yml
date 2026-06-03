@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests + CD
 
 on:
   push:
@@ -23,3 +23,10 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest
+
+      # CD
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tic-tac-toe-build
+          path: .
